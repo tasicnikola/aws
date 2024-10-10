@@ -6,4 +6,4 @@ STACK_NAME="cfn-s3-simple"
 
 #provide a --region, it will delete stack on default region if not provided
 aws cloudformation delete-stack \
---stack-name $STACK_NAME
+--stack-name $STACK_NAME 
