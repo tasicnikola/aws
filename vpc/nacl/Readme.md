@@ -1,12 +1,26 @@
 ## Create NACL
 
 ```sh
-aws ec2 create-network acl --vpc-id vpc-0015644d489ce02d0
-
+aws ec2 create-network-acl --vpc-id vpc-03181823a2da0addd
 ```
+
+## Add entry
+
+```sh
+aws ec2 create-network-acl-entry \
+--network-acl-id acl-02def3052778d5ce2 \
+--ingress \
+--rule-number 90 \
+--protocol -1 \
+--port-range From=0,To=65535 \
+--cidr-block 174.5.108.3/32 \
+--rule-action deny
+```
+
 
 ## Get AMI for Amazon Linux 2
 
+Gab the latest AML2 AMI
 ```sh
 aws ec2 describe-images \
 --owners amazon \
